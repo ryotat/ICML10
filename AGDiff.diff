@@ -1,4 +1,3 @@
-{{{#!diff
 46c46
 < function [Wp,b,fval_vec,itr_counter] = accel_grad_mc(Xtrain,Ytrain,lambda,opt)
 
@@ -366,4 +365,3 @@
 < tval = a'*b;
 
 
-}}}
