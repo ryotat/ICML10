@@ -9,16 +9,16 @@ Matlab calling sequence:
 #include "mex.h"
 
 /* Templates for FORTRAN routines: */
-void dbdqr_(int *n, double *d, double *e, double *c1, double *c2);
-void dbdsqr_(char *uplo, int *n, int *ncvt, int *nru, int *ncc,
-	     double *d, double *e, double *vt, int *ldt, double *u,
-	     int *ldu, double *c, int *ldc, double *work, int *info);
+void dbdqr_(mwSignedIndex *n, double *d, double *e, double *c1, double *c2);
+void dbdsqr_(char *uplo, mwSignedIndex *n, mwSignedIndex *ncvt, mwSignedIndex *nru, mwSignedIndex *ncc,
+	     double *d, double *e, double *vt, mwSignedIndex *ldt, double *u,
+	     mwSignedIndex *ldu, double *c, mwSignedIndex *ldc, double *work, mwSignedIndex *info);
 
 /* Here comes the gateway function to be called by Matlab: */
 void mexFunction(int nlhs, mxArray *plhs[], 
 		 int nrhs, const mxArray *prhs[])
 {
-  int m, n, i, info, zero=0, one=1;
+  mwSignedIndex m, n, i, info, zero=0, one=1;
   double *d,*e,dummy, *wrk, *bnd;
 
   if (nrhs != 2)

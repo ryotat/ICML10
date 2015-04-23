@@ -39,15 +39,15 @@
 
 /* Template for reorth: */
 
-void reorth_(int *n, int *k, double *V, int *ldv, double *vnew,
+void reorth_(mwSignedIndex *n, mwSignedIndex *k, double *V, mwSignedIndex *ldv, double *vnew,
 	    double *normvnew, double *index, double *alpha, double *work,
-	    int *iflag, int *nre);
+	    mwSignedIndex *iflag, mwSignedIndex *nre);
 
 /* Here comes the gateway function to be called by Matlab: */
 void mexFunction(int nlhs, mxArray *plhs[], 
 		 int nrhs, const mxArray *prhs[])
 {
-  int n, k1, k, imethod, inre;
+  mwSignedIndex n, k1, k, imethod, inre;
   double *work;
 
   if (nrhs != 6)

@@ -1,10 +1,10 @@
 
       subroutine dbdqr(n, D, E, c1, c2)
       implicit none
-      integer n
+      integer(8) n
       double precision D(*),E(*),c1,c2
       
-      integer i
+      integer(8) i
       double precision cs,sn,r
 
       if (n.lt.2) return

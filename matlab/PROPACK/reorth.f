@@ -33,10 +33,10 @@ c  Prentice-Hall, Englewood Cliffs, NJ, 1980. pp. 105-109
 
 c  Rasmus Munk Larsen, DAIMI, 1998.
       implicit none
-      integer n,k,ldv,i,iflag,nre
+      integer(8) n,k,ldv,i,iflag,nre
       double precision V(ldv,*),vnew(*),normv,index(*),work(*)
       double precision alpha,normv_old,dnrm2
-      integer MAXTRY
+      integer(8) MAXTRY
       parameter (MAXTRY=4)
       external dgemv,dnrm2
 
@@ -82,9 +82,9 @@ c
 
       subroutine MGS(n,k,V,ldv,vnew,index)
       implicit none
-      integer n,k,ldv
+      integer(8) n,k,ldv
       double precision V(ldv,*),vnew(*),index(*)
-      integer i,j,idx
+      integer(8) i,j,idx
       double precision s
 
 c     
